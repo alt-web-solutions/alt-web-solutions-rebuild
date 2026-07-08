@@ -1,0 +1,133 @@
+.tech-background,
+.tech-ambient,
+.tech-grid {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  contain: layout style paint;
+}
+
+.tech-background {
+  z-index: 0;
+  opacity: 0.82;
+  mix-blend-mode: screen;
+}
+
+.tech-ambient,
+.tech-grid {
+  z-index: 1;
+}
+
+.tech-ambient {
+  background:
+    radial-gradient(
+      circle at var(--mouse-x, 50%) var(--mouse-y, 38%),
+      rgba(37, 99, 235, 0.2),
+      transparent 24rem
+    ),
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(37, 99, 235, 0.1),
+      transparent 20rem
+    ),
+    radial-gradient(
+      circle at 88% 76%,
+      rgba(37, 99, 235, 0.1),
+      transparent 22rem
+    );
+  opacity: 0.3;
+  transition: opacity var(--ease);
+}
+
+.tech-grid {
+  background-image:
+    linear-gradient(var(--alt-border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--alt-border) 1px, transparent 1px),
+    linear-gradient(
+      115deg,
+      transparent 0 48%,
+      rgba(37, 99, 235, 0.1) 49%,
+      transparent 51% 100%
+    );
+  background-size:
+    72px 72px,
+    72px 72px,
+    220px 220px;
+  mask-image: radial-gradient(circle at 50% 22%, black 0%, transparent 70%);
+  opacity: 0.16;
+  animation: interactiveGridDrift 24s linear infinite;
+}
+
+.site-header {
+  position: relative;
+  z-index: 1000;
+}
+
+main,
+.site-footer {
+  position: relative;
+  z-index: 2;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+@keyframes interactiveGridDrift {
+  from {
+    background-position:
+      0 0,
+      0 0,
+      0 0;
+  }
+
+  to {
+    background-position:
+      72px 72px,
+      72px 72px,
+      220px -220px;
+  }
+}
+
+@keyframes interfaceSweep {
+  from {
+    transform: translateX(-5%) skewX(-10deg);
+  }
+
+  to {
+    transform: translateX(7%) skewX(-10deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tech-background {
+    display: none;
+  }
+
+  .tech-grid,
+  .hero::before {
+    animation: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .tech-background {
+    opacity: 0.6;
+  }
+
+  .tech-ambient {
+    opacity: 0.34;
+  }
+
+  .tech-grid {
+    background-size:
+      54px 54px,
+      54px 54px,
+      170px 170px;
+    opacity: 0.1;
+  }
+}

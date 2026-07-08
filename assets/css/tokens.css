@@ -1,0 +1,22 @@
+:root {
+  --alt-black: #050505;
+  --alt-charcoal: #111;
+  --alt-white: #f5f5f5;
+  --alt-blue: #2563eb;
+  --alt-blue-light: #4077ed;
+  --alt-border: rgba(245, 245, 245, 0.25);
+  --alt-surface: rgba(245, 245, 245, 0.025);
+  --alt-text-muted: rgba(255, 255, 255, 0.75);
+
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
+
+  --container-width: 75rem;
+  --container-gutter: clamp(2rem, 6vw, 4rem);
+  --section-space: 4rem;
+  --grid-gap: 1.25rem;
+
+  --radius-sm: 0.625rem;
+  --radius-md: 0.9375rem;
+  --ease: 180ms ease;
+}
