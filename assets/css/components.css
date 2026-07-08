@@ -3,7 +3,16 @@
   margin-inline: auto;
 }
 
-.site-header,
+.site-header-shell,
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 1px solid rgba(245, 245, 245, 0.08);
+  background: rgba(5, 5, 5, 0.82);
+  backdrop-filter: blur(14px);
+}
+
 .site-footer {
 }
 
@@ -200,6 +209,16 @@
 
 .testimonials {
   align-items: center;
+}
+
+@media (min-width: 68.001rem) {
+  .desktop-content-first > .section-intro {
+    order: 2;
+  }
+
+  .desktop-content-first > :not(.section-intro) {
+    order: 1;
+  }
 }
 
 .card-grid {
@@ -544,6 +563,38 @@ details[open] p {
     grid-template-columns: 1fr;
   }
 
+  .desktop-content-first > .section-intro {
+    order: -1;
+  }
+
+  .split > .section-intro,
+  .process-split > .section-intro,
+  .faq-split > .section-intro,
+  .contact-split > .section-intro {
+    justify-items: center;
+    text-align: center;
+  }
+
+  .checklist-card {
+    width: min(100%, 20rem);
+    margin-inline: auto;
+  }
+
+  .contact-form {
+    width: min(100%, 38rem);
+    margin-inline: auto;
+  }
+
+  .contact-details {
+    justify-items: center;
+    text-align: center;
+  }
+
+  .contact-details span,
+  .contact-details a {
+    justify-content: center;
+  }
+
   .card-grid-three,
   .card-grid-four {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -560,6 +611,28 @@ details[open] p {
   .card-grid-three,
   .card-grid-four {
     grid-template-columns: 1fr;
+  }
+
+  .section-intro,
+  .card,
+  details,
+  .contact-details {
+    justify-items: center;
+    text-align: center;
+  }
+
+  .price,
+  .tag-list {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .price-card {
+    align-items: center;
+  }
+
+  .work-card .button {
+    margin-inline: auto;
   }
 
   .button,
